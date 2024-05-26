@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* liste_apprenants.css */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn-ajouter {
+    background-color: aqua;
+}
+
+.btn-details {
+    background-color: blue;
+}
+
+.btn-edit {
+    background-color: green;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+</style>
+    <h1>Liste des apprenants</h1>
+
+    <a href="{% url 'ajout_apprenant' %}" class="btn btn-ajouter">Ajouter un nouvel apprenant</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Filiére</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for apprenant in apprenants %}
+            <tr>
+                <td>{{ apprenant.nom }}</td>
+                <td>{{ apprenant.prenom }}</td>
+                <td>{{ apprenant.filiere }}</td>
+                <td>
+                    <a href="{% url 'detail_apprenant' apprenant.id %}" class="btn btn-details">Détails</a>
+                    <a href="{% url 'supprimer_apprenant' apprenant.id %}" class="btn btn-delete">Supprimer</a>
+                    <a href="{% url 'modification_apprenant' apprenant.id %}" class="btn btn-edit">Modifier</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

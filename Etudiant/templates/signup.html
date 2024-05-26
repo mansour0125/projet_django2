@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+<body>
+  <section>
+    <h1>Inscription</h1>
+
+    <form method="post" >
+        {%csrf_token%}
+
+    <div class="login-form">
+      <h4>Nom d'utilisateur :</h4>
+      <div class="username-input">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Nom d'utilisateur" name="username">
+      </div>
+      <div class="login-form">
+        <h4>Adresse email :</h4>
+        <div class="username-input">
+          <i class="fas fa-user"></i>
+          <input type="email" placeholder="Adresse email" name="email">
+        </div>
+      <h4>Mot de passe :</h4>
+      <div class="password-input">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Mot de passe" name="password">
+      </div>
+      <div class="login-form">
+        <h4>Confirmer le mot de passe :</h4>
+        <div class="username-input">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Confirmer le mot de passe :" name="password2">
+        </div>
+    </div>
+    <button class="login-btn" type="submit">
+        S'inscrire
+    </button>
+    <div class="alternative-signup">
+      <p>J'ai déja un compte?<span>Se Connecter</span></p>
+    </div>
+    </form>
+  </section>
+</body>
+</html>

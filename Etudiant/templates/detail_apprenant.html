@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        
+    </style>
+
+    <h1>Détails de l'apprenant</h1>
+    <p>Nom : {{ apprenant.nom }}</p>
+    <p>Prénom : {{ apprenant.prenom }}</p>
+    <p>Date de naissance : {{ apprenant.date_naissance }}</p>
+    <p>Email : {{ apprenant.email }}</p>
+    <p>Filière : {{ apprenant.filiere }}</p>
+    <p>Numéro d'identification national : {{ apprenant.numero_identification }}</p>
+    <a href="{% url 'modification_apprenant' apprenant.id %}">Modifier</a>
+    <a href="{% url 'supprimer_apprenant' apprenant.id %}">Supprimer</a>
+{% endblock %}
+

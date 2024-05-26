@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        
+    </style>
+
+    <h1>Confirmer la suppression de {{ apprenant.nom }} {{ apprenant.prenom }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Confirmer la suppression</button>
+        <button type="submit">Annuler la suppression</button>
+    </form>
+{% endblock %}
+
